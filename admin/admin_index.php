@@ -4,6 +4,8 @@ include("connection.php");
 $query="select p_image from admin where email='".$_SESSION['Email']."'";
 $result=mysqli_query($con,$query);
 
+$query1="select * from admin where email='".$_SESSION['Email']."'";
+$result1=mysqli_query($con,$query);
 
  ?>
 <!doctype html>
@@ -32,10 +34,7 @@ $result=mysqli_query($con,$query);
         <div class="sidebar-content">
           <div class="sidebar-brand">
             <a href="login_do.php?logout=true"><i class="fa fa-sign-out" aria-hidden="true">Logout</i></a>
-            <div id="close-sidebar">
 
-
-            </div>
           </div>
           <div class="sidebar-header">
             <div class="user-pic">
@@ -59,6 +58,7 @@ $result=mysqli_query($con,$query);
                   <span><a href="admin_templates\edit.php" class="user-status"> Edit profile</span>
               </span>
             </div>
+
           </div>
           <div class="sidebar-menu">
             <ul>
@@ -75,25 +75,33 @@ $result=mysqli_query($con,$query);
 
               </li>
               <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-shopping-cart"></i>
-                  <span>E-commerce</span>
+                <a href="admin_templates/add_trains.php">
+
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Add Trains No.</span>
                   <span class="badge badge-pill badge-danger">New</span>
                 </a>
-
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="admin_templates/add_station.php">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <span>Add Station</span>
+                    <span class="badge badge-pill badge-danger">New</span>
+                  </a>
+                </li>
+              <li class="sidebar-dropdown">
+                <a href="admin_templates/set_route.php">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Set Trains Route</span>
+                  <span class="badge badge-pill badge-danger">New</span>
+                </a>
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="far fa-gem"></i>
-                  <span>Components</span>
+                  <i class="fa fa-table" aria-hidden="true"></i>
+                  <span>Time Tables</span>
                 </a>
 
-              </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-chart-line"></i>
-                  <span>Charts</span>
-                </a>
 
               </li>
               <li class="sidebar-dropdown">
@@ -109,7 +117,7 @@ $result=mysqli_query($con,$query);
               <li>
                 <a href="#">
                   <i class="fa fa-book"></i>
-                  <span>Documentation</span>
+                  <span>Transaction</span>
                   <span class="badge badge-pill badge-primary">Beta</span>
                 </a>
               </li>
@@ -132,6 +140,7 @@ $result=mysqli_query($con,$query);
 
       </nav>
       <!-- sidebar-wrapper  -->
+
       <main class="page-content">
         <div class="container">
           <h2>Indian Railway Reservation E-Portal</h2>
@@ -142,6 +151,7 @@ $result=mysqli_query($con,$query);
               <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
                   Github</a>, it contains more themes and background image option</p>
             </div>
+
             <div class="form-group col-md-12">
               <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=small" frameborder="0" scrolling="0" width="90px" height="30px"></iframe>
               <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=small" frameborder="0" scrolling="0" width="90px" height="30px"></iframe>
@@ -226,12 +236,7 @@ $result=mysqli_query($con,$query);
 
       </main>
       <!-- page-content" -->
-    </div>
-    <!-- page-wrapper -->
-
-
-
-
+      </div>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
