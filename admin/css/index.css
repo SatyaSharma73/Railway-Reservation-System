@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 @keyframes swing {
   0% {
     transform: rotate(0deg);
@@ -198,11 +199,6 @@ body {
   color: #5cb85c;
 }
 
-/*-----------------------sidebar-search------------------------*/
-
-.sidebar-wrapper .sidebar-search > div {
-  padding: 10px 20px;
-}
 
 /*----------------------sidebar-menu-------------------------*/
 
@@ -365,47 +361,11 @@ body {
   overflow-x: hidden;
 }
 
-/*------scroll bar---------------------*/
-
-::-webkit-scrollbar {
-  width: 5px;
-  height: 7px;
-}
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
-::-webkit-scrollbar-thumb {
-  background: #525965;
-  border: 0px none #ffffff;
-  border-radius: 0px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #525965;
-}
-::-webkit-scrollbar-thumb:active {
-  background: #525965;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-  border: 0px none #ffffff;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-track:hover {
-  background: transparent;
-}
-::-webkit-scrollbar-track:active {
-  background: transparent;
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
-
 
 /*-----------------------------chiller-theme-------------------------------------------------*/
 
 .chiller-theme .sidebar-wrapper {
-    background: #31353D;
+    background: #151515;
 }
 
 .chiller-theme .sidebar-wrapper .sidebar-header,
@@ -458,8 +418,9 @@ body {
 .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
 .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
 .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
-    background: #3a3f48;
+    background: #4e3620;
 }
+/* 3a3f48 */
 
 .chiller-theme .sidebar-wrapper .sidebar-menu .header-menu span {
     color: #6c7b88;
@@ -477,4 +438,32 @@ body {
 
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
+}
+.container{
+  position: relative;
+  padding-top: 10px;
+}
+.table1{
+  position: absolute;
+  left: 700px;
+  height: 200px;
+   width: 40%;
+
+}
+.table2{
+  position: absolute;
+  width: 100%;
+  top: 250px;
+  right: 250px;
+
+}
+.foot{
+  position: relative;
+  top: 800px;
+  padding-bottom: 50px;
+}
+.dash_heading{
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  padding-bottom: 30px;
 }

@@ -3,7 +3,7 @@ include("connection2.php");
 
 if (isset($_POST['Submit'])) {
 
-  $query="insert into station set station_name='".$_POST['station_name']."',station_code='".$_POST['station_code']."'";
+  $query="insert into station set station_name='".$_POST['station_name']."',station_code='".$_POST['station_code']."',station_master='".$_POST['station_master']."'";
   mysqli_query($con,$query);
   // header("location:login.php");
   }
@@ -48,9 +48,17 @@ if (isset($_POST['Submit'])) {
           <form method="POST" enctype="multipart/form-data" class="form">
             <h2>Add New Station</h2>
             <div class="form-group">
+              <label for="email">Station Master Name:</label>
+              <div class="relative">
+                <input type="text" id="name" name="station_master" class="form-control"  placeholder="Eg. John" title="Username should only contain letters. e.g. Piyush Gupta" required="" autofocus="">
+
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <div class="form-group">
               <label for="email">Station Name:</label>
               <div class="relative">
-                <input type="text" id="name" name="station_name" pattern="[a-zA-Z\s]+" class="form-control"  placeholder="Eg. John" title="Username should only contain letters. e.g. Piyush Gupta" required="" autofocus="">
+                <input type="text" id="name" name="station_name"  class="form-control"    required="" autofocus="">
 
                 <i class="fa fa-user"></i>
               </div>

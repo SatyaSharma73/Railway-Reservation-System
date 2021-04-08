@@ -7,6 +7,20 @@ $result=mysqli_query($con,$query);
 $query1="select * from admin where email='".$_SESSION['Email']."'";
 $result1=mysqli_query($con,$query);
 
+$query2="select * from station";
+$result2=mysqli_query($con,$query2);
+
+if (isset($_REQUEST['search'])) {
+  $query3="Select * from train where train_name='".$_REQUEST['search']."'";
+  mysqli_query($con,$query3);
+  header("location:Time_tables.php");
+}
+
+
+
+
+
+
  ?>
 <!doctype html>
 <html lang="en">
@@ -17,6 +31,9 @@ $result1=mysqli_query($con,$query);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard_tables.css">
+    <link rel="stylesheet" href="css/search.css">
+    <!-- <link rel="stylesheet" href="css/card_details.css"> -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
@@ -105,7 +122,7 @@ $result1=mysqli_query($con,$query);
 
               </li>
               <li class="sidebar-dropdown">
-                <a href="#">
+                <a href="https://www.google.com/maps/@22.3867122,78.420565,5z">
                   <i class="fa fa-globe"></i>
                   <span>Maps</span>
                 </a>
@@ -141,96 +158,55 @@ $result1=mysqli_query($con,$query);
       </nav>
       <!-- sidebar-wrapper  -->
 
-      <main class="page-content">
-        <div class="container">
-          <h2>Indian Railway Reservation E-Portal</h2>
-          <hr>
-          <div class="row">
-            <div class="form-group col-md-12">
-              <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
-              <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-                  Github</a>, it contains more themes and background image option</p>
-            </div>
 
-            <div class="form-group col-md-12">
-              <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=small" frameborder="0" scrolling="0" width="90px" height="30px"></iframe>
-              <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=small" frameborder="0" scrolling="0" width="90px" height="30px"></iframe>
-            </div>
-            <div class="form-group col-md-12">
-              <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">New !</h4>
-                <p>New react pro sidebar library is now available on <a href="https://www.npmjs.com/package/react-pro-sidebar" target="_blank">npm</a> <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank">
-                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/azouaoui-med/react-pro-sidebar?style=social" />
-                  </a></p>
-                <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank" class="btn btn-sm btn-primary mr-2">
-                  Github</a>
-                <a href="https://azouaoui-med.github.io/react-pro-sidebar" target="_blank" class="btn btn-sm btn-success">
-                  Demo</a>
+<div class="container">
+  <h2 class="dash_heading">Indian Railway Reservation E-Portal</h2>
+  <hr>
 
-              </div>
+    <div class="table1">
+      <h1 class="heading">Station Masters</h1>
+      <br>
+      <hr>
+      <table border="5px">
 
-            </div>
-          </div>
-          <h5>More templates</h5>
-          <hr>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-              <div class="card rounded-0 p-0 shadow-sm">
-                <img src="https://user-images.githubusercontent.com/25878302/58369568-a49b2480-7efc-11e9-9ca9-2be44afacda1.png" class="card-img-top rounded-0" alt="Angular pro sidebar">
-                <div class="card-body text-center">
-                  <h6 class="card-title">Angular Pro Sidebar</h6>
-                  <a href="https://github.com/azouaoui-med/angular-pro-sidebar" target="_blank" class="btn btn-primary btn-sm">Github</a>
-                  <a href="https://azouaoui-med.github.io/angular-pro-sidebar/demo/" target="_blank" class="btn btn-success btn-sm">Demo</a>
-                  <hr>
-                  <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank">
-                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/azouaoui-med/angular-pro-sidebar?style=social" />
-                  </a>
-                  <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank">
-                    <img alt="GitHub stars" src="https://img.shields.io/github/forks/azouaoui-med/angular-pro-sidebar?style=social" />
-                  </a>
+        <thead>
+          <tr>
+            <th scope="col">Station Name</th>
+            <th scope="col">Station Master</th>
+            <th scope="col">Station Code</th>
 
-                </div>
+          </tr>
+        </thead>
+        <?php while($fetch=mysqli_fetch_object($result2)){ ?>
+        <tbody>
+          <tr>
+            <td><?php echo $fetch->station_name;  ?></td>
+            <td><?php echo $fetch->station_master;  ?></td>
+            <td><?php echo $fetch->station_code;  ?></td>
+          </tr>
 
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-              <div class="card rounded-0 p-0 shadow-sm">
-                <img src="https://user-images.githubusercontent.com/25878302/58369258-33f20900-7ef8-11e9-8ff3-b277cb7ed7b4.PNG" class="card-img-top rounded-0" alt="Angular pro sidebar">
-                <div class="card-body text-center">
-                  <h6 class="card-title">Angular Dashboard</h6>
-                  <a href="https://github.com/azouaoui-med/lightning-admin-angular" target="_blank" class="btn btn-primary btn-sm">Github</a>
-                  <a href="https://azouaoui-med.github.io/lightning-admin-angular/demo/" target="_blank" class="btn btn-success btn-sm">Demo</a>
-                  <hr>
-                  <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank">
-                    <img alt="GitHub stars" src="https://img.shields.io/github/stars/azouaoui-med/lightning-admin-angular?style=social" />
-                  </a>
-                  <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank">
-                    <img alt="GitHub stars" src="https://img.shields.io/github/forks/azouaoui-med/lightning-admin-angular?style=social" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
+        </tbody>
+         <?php } ?>
 
-          <footer class="text-center">
-            <div class="mb-2">
-              <small>
-                © 2021 made By
-                  Satya Sharma | Sayan Garai | Sayan Ghosal
+      </table>
+    </div>
 
-              </small>
-            </div>
+    <div class="table2">
+      <div class="wrap">
+        <h1 class="search_pnr">Search PNR</h1>
 
-            <div>
-              <a href="https://github.com/azouaoui-med" target="_blank">
-                <img alt="GitHub followers" src="https://img.shields.io/github/followers/azouaoui-med?label=github&style=social" />
-              </a>
-              <a href="https://twitter.com/azouaoui_med" target="_blank">
-                <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social" />
-              </a>
-            </div>
-          </footer>
+     <form  action="" method="post">
+       <div class="search">
+          <input type="text"  name="search" class="searchTerm" placeholder="What are you looking for?">
+          <button type="submit" name="search" class="searchButton">
+            <i class="fa fa-search"></i>
+         </button>
+       </div>
+     </form>
+
+</div>
+
+    </div>
 
         </div>
 
