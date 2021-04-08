@@ -1,7 +1,8 @@
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
-  padding: 50px;
+  
+  padding: 10px;
 }
 .heading {
   font-size: 1.3em;

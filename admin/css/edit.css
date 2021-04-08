@@ -2,11 +2,7 @@ html{
     height: 100%;
 }
 body {
-    background-image: url("image\1.png");
-    background-color: #ea2c62;
-    font-family: 'Montserrat', sans-serif;
-
-
+      font-family: 'Montserrat', sans-serif;
 }
 .form {
     max-width: calc(100vw - 40px);

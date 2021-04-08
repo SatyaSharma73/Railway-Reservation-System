@@ -1,6 +1,5 @@
 <?php
 include("connection2.php");
-
 $query="select * from train";
 $result=mysqli_query($con,$query);
 
@@ -25,19 +24,37 @@ if (isset($_REQUEST['del'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://use.fontawesome.com/0af9610dbb.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/time_tables.css">
-
+    <link rel="stylesheet" href="../css/navbar.css">
 
   </head>
   <body>
 
-      <a href="login_do.php?logout=true"><i class="fa fa-sign-out" aria-hidden="true">Logout</i></a>
+    <nav id="navigationBar">
+      <ul>
+        <li>
+          <a href="../admin_index.php" class="link">Home</a>
+        </li>
+        <li>
+          <a href="add_trains.php" class="link">Add Trains</a>
+        </li>
+        <li>
+          <a href="add_station.php" class="link">Add Station</a>
+        </li>
+        <li>
+          <a href="set_time.php" class="link">Set Train Timing</a>
+        </li>
+        
+      </ul>
 
+    </nav>
 
-
-    <h1 class="heading">Statement Summary</h1>
+    <h1 class="heading">Time Charts</h1>
+    <br>
+    <hr>
     <table>
 
       <thead>

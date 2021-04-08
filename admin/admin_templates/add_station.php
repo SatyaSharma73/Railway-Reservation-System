@@ -20,17 +20,30 @@ if (isset($_POST['Submit'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/edit.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <script src="https://use.fontawesome.com/0af9610dbb.js"></script>
     <title>Welcome to Indian Railway Passenger Reservation Enquiry</title>
   </head>
 
-  <style media="screen">
-  body{
-    padding: 100px;
-  }
 
-  </style>
   <body>
+    <nav id="navigationBar">
+      <ul>
+        <li>
+          <a href="../admin_index.php" class="link">Home</a>
+        </li>
+        <li>
+          <a href="Time_tables.php" class="link">View Chart</a>
+        </li>
+        <li>
+          <a href="add_trains.php" class="link">Add Trains</a>
+        </li>
+        <li>
+          <a href="set_time.php" class="link">Set Train Timing</a>
+        </li>
+      </ul>
+
+    </nav>
 
           <form method="POST" enctype="multipart/form-data" class="form">
             <h2>Add New Station</h2>

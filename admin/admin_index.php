@@ -90,9 +90,9 @@ $result1=mysqli_query($con,$query);
                   </a>
                 </li>
               <li class="sidebar-dropdown">
-                <a href="admin_templates/set_route.php">
+                <a href="admin_templates/set_time.php">
                   <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span>Set Trains Route</span>
+                  <span>Set Trains Time</span>
                   <span class="badge badge-pill badge-danger">New</span>
                 </a>
               </li>
