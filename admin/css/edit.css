@@ -2,7 +2,8 @@ html{
     height: 100%;
 }
 body {
-      font-family: 'Montserrat', sans-serif;
+      
+      font-family:"Arial Narrow";
 }
 .form {
     max-width: calc(100vw - 40px);

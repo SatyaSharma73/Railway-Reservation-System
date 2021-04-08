@@ -22,10 +22,10 @@ if (isset($_POST['Submit'])) {
     <script src="https://use.fontawesome.com/0af9610dbb.js"></script>
     <link rel="stylesheet" href="../css/navbar.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
     <link rel="stylesheet" href="../css/edit.css">
 
   </head>
+  
   <body>
 
     <nav id="navigationBar">
