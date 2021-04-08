@@ -97,7 +97,7 @@ $result1=mysqli_query($con,$query);
                 </a>
               </li>
               <li class="sidebar-dropdown">
-                <a href="#">
+                <a href="admin_templates/Time_tables.php">
                   <i class="fa fa-table" aria-hidden="true"></i>
                   <span>Time Tables</span>
                 </a>

@@ -3,15 +3,14 @@ include("connection2.php");
 
 if (isset($_POST['Submit'])) {
 
-  $query="insert into route set train_id='".$_POST['train_id']."',station_id='".$_POST['station_id']."',arrival='".$_POST['arrival']."',departure='".$_POST['departure']."'";
+  $query="insert into route set train_id='".$_POST['train_id']."',arrival='".$_POST['arrival']."',departure='".$_POST['departure']."'";
   mysqli_query($con,$query);
   // header("location:login.php");
   }
 
-  $query1="select * from station,train";
-  $result1=mysqli_query($con,$query1);
 
-  $query2="select * from station,train";
+
+  $query2="select * from train";
   $result2=mysqli_query($con,$query2);
    ?>
 
@@ -40,12 +39,12 @@ if (isset($_POST['Submit'])) {
 
 
             <form method="POST" enctype="multipart/form-data" class="form">
-              <h2>Set Train Route</h2>
+              <h2>Set Train Time</h2>
               <div class="form-group">
                 <label for="email">Select Train No.</label>
                 <div class="relative">
                   <select name="train_id" class="form-control" id="stations">
-                    <?php while($fetch=mysqli_fetch_object($result1)){   ?>
+                    <?php while($fetch=mysqli_fetch_object($result2)){   ?>
                       <option value="<?php echo $fetch->id;?>"><?php echo $fetch->train_no;?></option>
                     <?php } ?>
                   </select>
@@ -53,19 +52,8 @@ if (isset($_POST['Submit'])) {
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="email">Choose Station</label>
-                <div class="relative">
 
-                  <select name="station_id" class="form-control" id="stations">
-                    <?php while($fetch=mysqli_fetch_object($result2)){   ?>
-                      <option value="<?php echo $fetch->id;?>"><?php echo $fetch->station_name;?></option>
-                    <?php } ?>
-                  </select>
 
-                  <i class="fa fa-phone"></i>
-                </div>
-              </div>
               <div class="form-group">
                 <label for="email">Arrival Time:</label>
                 <div class="relative">
@@ -79,6 +67,7 @@ if (isset($_POST['Submit'])) {
                   <i class="fa fa-phone"></i>
                 </div>
               </div>
+
 
               <div class="tright">
                 <a href=""><button class="movebtn movebtnre" type="Reset"><i class="fa fa-fw fa-refresh"></i> Reset </button></a>
