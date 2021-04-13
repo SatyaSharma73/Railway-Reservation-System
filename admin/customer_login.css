@@ -7,7 +7,7 @@
 
 body {
 	background: #f6f5f7;
-  background-image: url("https://wallpapercave.com/wp/wp4740888.jpg");
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -174,13 +174,13 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #132c33;
+	background: -webkit-linear-gradient(to right, #ce1212, #eeebdd);
+	background: linear-gradient(to right, #ce1212, #eeebdd);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
-	color: #FFFFFF;
+	color: #1b1717;
 	position: relative;
 	left: -100%;
 	height: 100%;

@@ -29,7 +29,13 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                   <ul class="navbar-nav nav  ml-auto py-4 py-md-4">
                     <li class="nav-item">
-                      <a class="nav-link " href="admin/admin_index.php">Login</a>
+                      <!-- <a class="nav-link " href="">Login</a> -->
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="admin/admin_index.php">Administrator</a>
+                        <a class="dropdown-item" href="admin/customer_login.php">Customer</a>
+
+                      </div>
                     </li>
                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 ml-auto ">
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Booking</a>
@@ -37,7 +43,6 @@
                         <a class="dropdown-item" href="templates/booking_procedure.php">Reservation Rules</a>
                         <a class="dropdown-item" href="#">Online Booking</a>
                         <a class="dropdown-item" href="templates/reservation_fee.php">Reservation Fee</a>
-
                       </div>
                     </li>
 
