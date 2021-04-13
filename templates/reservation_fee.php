@@ -115,7 +115,7 @@
 
 
 
-    <?php include("footer.php"); ?>
+<?php include("templates/footer.php"); ?>
 
 
 

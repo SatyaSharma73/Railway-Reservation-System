@@ -8,30 +8,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="stylesheet" href="css/footer.css">
+
+        <script src="https://use.fontawesome.com/0af9610dbb.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
   </head>
+
+  <style>
+  footer {
+      background-color: #222;
+      color: #fff;
+      font-size: 14px;
+      bottom: 0;
+      position: fixed;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 999;
+  }
+
+  footer p {
+      margin: 10px 0;
+  }
+
+  footer i {
+      color: red;
+  }
+
+  footer a {
+      color: #3c97bf;
+      text-decoration: none;
+  }
+  </style>
+
   <body>
 
 
-    <div class="container">
-        <hr>
-        <!-- Footer -->
-        <footer>
+    <footer>
+    	<p>
+    		Created with <i class="fa fa-heart"></i> by
+    		<a  href="#">Satya Sharma</a>
+    		- Read how I created this and how you can join the challenge
+    		<a  href="#">here</a>.
+    	</p>
+    </footer>
 
-            <div class="row">
-                <div class="col-lg-14 text-center">
-                  <blockquote cite="">
-                     Designed by Satya Sharma , Sayan Garai , Sayan Ghosal
-                  </blockquote>
-                  
-
-                </div>
-            </div>
-        </footer>
-    </div>
 
 
 
@@ -45,15 +67,7 @@
 		document.getElementsByTagName('head')[0].appendChild(s);
 
 	</script>
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    -->
   </body>
 </html>

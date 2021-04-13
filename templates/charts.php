@@ -5,13 +5,6 @@ $result=mysqli_query($con,$query);
 
 $query1="select * from route";
 $result1=mysqli_query($con,$query1);
-
-if (isset($_REQUEST['del'])) {
-  $query="delete from train where train_name='".$_REQUEST['del']."'";
-  mysqli_query($con,$query);
-  header("location:Time_tables.php");
-}
-
  ?>
 
 <!doctype html>
@@ -28,29 +21,11 @@ if (isset($_REQUEST['del'])) {
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/time_tables.css">
-    <link rel="stylesheet" href="../css/navbar.css">
+
 
   </head>
   <body>
 
-    <nav id="navigationBar">
-      <ul>
-        <li>
-          <a href="../admin_index.php" class="link">Home</a>
-        </li>
-        <li>
-          <a href="add_trains.php" class="link">Add Trains</a>
-        </li>
-        <li>
-          <a href="add_station.php" class="link">Add Station</a>
-        </li>
-        <li>
-          <a href="set_time.php" class="link">Set Train Timing</a>
-        </li>
-
-      </ul>
-
-    </nav>
 
     <h1 class="heading">Time Charts</h1>
     <br>
@@ -66,7 +41,7 @@ if (isset($_REQUEST['del'])) {
           <th scope="col">Arrival</th>
           <th scope="col">Departure</th>
           <th scope="col">Runs On</th>
-          <th scope="col">Actions</th>
+
 
         </tr>
       </thead>
@@ -91,7 +66,7 @@ if (isset($_REQUEST['del'])) {
                     echo $fetch1->departure;
              ?></td>
               <td><?php echo $fetch->specific_day;  ?></td>
-              <td><a class="edit" href="edit_train.php?no=<?php echo $fetch->train_no;?>"> Edit </a><a class="del" href="Time_tables.php?del=<?php echo $fetch->train_name;?>"> || Delete </a></td>
+
 
 
         </tr>
@@ -102,32 +77,9 @@ if (isset($_REQUEST['del'])) {
     </table>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="css/js/navbar.js" charset="utf-8"></script>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

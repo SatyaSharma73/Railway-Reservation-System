@@ -42,7 +42,7 @@
                     </li>
 
                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                      <a class="nav-link " href="#">About Us</a>
+                      <a class="nav-link " href="templates/charts.php">Time Schedule</a>
                     </li>
 
                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">

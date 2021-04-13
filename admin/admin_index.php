@@ -40,8 +40,25 @@ if (isset($_REQUEST['search'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/0af9610dbb.js"></script>
     <title>Welcome to Indian Railway Passenger Reservation Enquiry </title>
+    <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
   </head>
-  <body>
+  <body onload="startTime()">
 
     <div class="page-wrapper chiller-theme toggled">
       <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
@@ -49,10 +66,10 @@ if (isset($_REQUEST['search'])) {
       </a>
       <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
-          <div class="sidebar-brand">
+          <div  class="sidebar-brand">
             <a href="login_do.php?logout=true"><i class="fa fa-sign-out" aria-hidden="true">Logout</i></a>
-
           </div>
+
           <div class="sidebar-header">
             <div class="user-pic">
               <?php while($fetch=mysqli_fetch_object($result)){ ?>
@@ -69,11 +86,13 @@ if (isset($_REQUEST['search'])) {
 
               <span class="user-role">Administrator</span>
               <span class="user-status">
-                <span>Online</span>
+                <span>Online  </span><span id="txt" class="user-role">  </span>
                 </span>
+
               <span class="user-status">
                   <span><a href="admin_templates\edit.php" class="user-status"> Edit profile</span>
               </span>
+
             </div>
 
           </div>

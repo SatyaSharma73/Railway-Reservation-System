@@ -41,6 +41,7 @@
 }
 body {
   font-size: 0.9rem;
+
 }
 .page-wrapper .sidebar-wrapper,
 .sidebar-wrapper .sidebar-brand > a,
@@ -442,6 +443,7 @@ body {
 .container{
   position: relative;
   padding-top: 10px;
+
 }
 .table1{
   position: absolute;
@@ -455,6 +457,7 @@ body {
   width: 100%;
   top: 250px;
   right: 250px;
+
 
 }
 .foot{
