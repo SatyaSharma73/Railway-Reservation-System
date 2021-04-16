@@ -3,7 +3,7 @@ include("connection2.php");
 
 if (isset($_POST['Submit'])) {
 
-  $query="insert into train set train_name='".$_POST['train_name']."',train_no='".$_POST['train_no']."',source='".$_POST['source']."',destination='".$_POST['destination']."',2A='".$_POST['2A']."',3A='".$_POST['3A']."',specific_day='".$_POST['specific_day']."',sleeper='".$_POST['sleeper']."'";
+  $query="insert into train set train_name='".$_POST['train_name']."',train_no='".$_POST['train_no']."',source='".$_POST['source']."',destination='".$_POST['destination']."',two_A='".$_POST['2A']."',three_A='".$_POST['3A']."',specific_day='".$_POST['specific_day']."',sleeper='".$_POST['sleeper']."'";
 
   mysqli_query($con,$query);
 
@@ -25,7 +25,7 @@ if (isset($_POST['Submit'])) {
     <link rel="stylesheet" href="../css/edit.css">
 
   </head>
-  
+
   <body>
 
     <nav id="navigationBar">

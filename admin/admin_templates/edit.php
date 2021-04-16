@@ -95,28 +95,28 @@ if (isset($_POST['Submit'])) {
   	  <div class="form-group">
   	  	<label for="email">Alternate Contact Number:</label>
   	  	<div class="relative">
-  	  		<input class="form-control" name="alternate_no" type="text" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required="" ">
+  	  		<input class="form-control" name="alternate_no" type="text" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required=" ">
   	  		<i class="fa fa-phone"></i>
   	  	</div>
   	  </div>
   	  <div class="form-group">
   	  	<label for="email">Permanent Address</label>
   	  	<div class="relative">
-          <input type="text" name="address" class="form-control"  placeholder="Eg. Cal Tech" required="">
+          <input type="text" name="address" class="form-control"  placeholder="Eg. Cal Tech" required>
   	  		<i class="fa fa-building"></i>
   	  	</div>
   	  </div>
   	  <div class="form-group">
   	  	<label for="email">Age:</label>
   	  	<div class="relative">
-  	  	<input class="form-control" name="age" type="text" required="" ">
+  	  	<input class="form-control" name="age" type="text" required">
   	  	<i class="fa fa-suitcase"></i>
   	  </div>
   	  </div>
   		<div class="form-group">
   			<label for="email">Gender:</label>
   	  	<div class="relative">
-  	  		<input class="form-control" type="text" name="sex" required="" ">
+  	  		<input class="form-control" type="text" name="sex" required="" >
   	  		<i class="fa fa-css3"></i>
   	  	</div>
   	  </div>
