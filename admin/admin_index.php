@@ -33,6 +33,7 @@ if (isset($_REQUEST['search'])) {
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/dashboard_tables.css">
     <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/footer.css">
     <!-- <link rel="stylesheet" href="css/card_details.css"> -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
@@ -233,6 +234,22 @@ function checkTime(i) {
       <!-- page-content" -->
       </div>
 
+      <div class="container">
+          <hr>
+          <!-- Footer -->
+          <footer>
+
+              <div class="row">
+                  <div class="col-lg-14 text-center">
+                    <blockquote cite="">
+                      Satya Sharma_CSE3A_52  ||  Sayan Garai_CSE3A_53   ||  Sayan Ghosal_CSE3A_53 
+                    </blockquote>
+
+
+                  </div>
+              </div>
+          </footer>
+      </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 <script src="css/js/index.js" charset="utf-8"></script>

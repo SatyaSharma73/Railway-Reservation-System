@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2021 at 03:57 PM
+-- Generation Time: Apr 20, 2021 at 11:03 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -43,6 +43,85 @@ INSERT INTO `admin` (`id`, `name`, `email`, `password`, `p_image`) VALUES
 (1, 'Satya Sharma', 'admin@admin.com', '123456', '5dc26c54ba7dff5b37db19e333be9d13.jpeg'),
 (2, 'sayan', 'skgarai789@gmail.com', '123456', 'b0f1cedf325733d23273279bbefb424e.png'),
 (3, 'qwertyu', 'qwertyu@qwerty', '123456', 'f0e35fc5454f39502cc93226fe2498c6.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `p_image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `name`, `email`, `password`, `p_image`) VALUES
+(1, 'Satya Sharma', 'satya@sharma.com', '123456', '42b829549b65b6d684d80f030ee20407.jpeg'),
+(2, 'Rohan', 'rohit@sharma.com', '123456', '84ab8a69eaa43a939dc9c99a8c439a6d.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_booking`
+--
+
+CREATE TABLE `customer_booking` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `adhaar` varchar(100) NOT NULL,
+  `adults` int(100) NOT NULL,
+  `children` int(100) NOT NULL,
+  `arrival` date NOT NULL,
+  `Berth_preference` varchar(100) NOT NULL,
+  `train_no` varchar(100) NOT NULL,
+  `type` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer_booking`
+--
+
+INSERT INTO `customer_booking` (`id`, `name`, `email`, `phone`, `adhaar`, `adults`, `children`, `arrival`, `Berth_preference`, `train_no`, `type`) VALUES
+(1, 'Satya Sharma', 'satya@sharma.com', 2147483647, '112233445566', 2, 0, '2021-04-28', 'Lower', '22201', '1021'),
+(2, 'Rohan', 'rohit@sharma.com', 2147483647, 'qwerty123456', 3, 1, '2021-04-27', 'Lower', '7896', '1021'),
+(3, 'Rohan', 'rohit@sharma.com', 2147483647, 'zxcasdqwer1234', 3, 2, '2021-04-28', 'Middle', '7896', '23'),
+(4, 'Rohan', 'rohit@sharma.com', 2147483647, '258644553322', 2, 1, '2021-04-21', 'Lower', '7896', '1021'),
+(5, 'Rohan', 'rohit@sharma.com', 2147483647, 'qwerty123456', 3, 3, '2021-04-30', 'Middle', '12267', '23'),
+(6, 'Rohan', 'rohit@sharma.com', 2147483647, 'qwertty45', 2, 3, '2021-04-27', 'Lower', '22201', '1021'),
+(7, 'Rohan', 'rohit@sharma.com', 2147483647, '344425554666', 4, 2, '2021-04-21', 'Lower', '7896', '465');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_invoice`
+--
+
+CREATE TABLE `order_invoice` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` int(100) NOT NULL,
+  `amount` int(100) NOT NULL,
+  `person` int(100) NOT NULL,
+  `arrival` date NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_invoice`
+--
+
+INSERT INTO `order_invoice` (`id`, `firstname`, `email`, `phone`, `amount`, `person`, `arrival`, `status`) VALUES
+(1, 'Rohan', 'rohit@sharma.com', 2147483647, 2790, 6, '2021-04-21', 'unpaid');
 
 -- --------------------------------------------------------
 
@@ -96,9 +175,7 @@ INSERT INTO `station` (`id`, `station_name`, `station_code`, `station_master`) V
 (4, 'MUMBAI CENTRAL', '4177', 'Rahul Singh'),
 (5, 'AHMEDABAD', '78431', 'Hardeep Singh'),
 (6, 'Lonavala', '3512', 'Jethalala'),
-(7, 'beldanga', '1233445', 'satya'),
-(8, 'sdfs', '56645', 'dfghadf'),
-(9, 'SDFSDf', '4564565', 'sdfzsdf');
+(7, 'beldanga', '1233445', 'satya');
 
 -- --------------------------------------------------------
 
@@ -112,8 +189,8 @@ CREATE TABLE `train` (
   `train_no` varchar(100) NOT NULL,
   `source` varchar(100) NOT NULL,
   `destination` varchar(100) NOT NULL,
-  `2A` varchar(100) NOT NULL,
-  `3A` varchar(100) NOT NULL,
+  `two_A` varchar(100) NOT NULL,
+  `three_A` varchar(100) NOT NULL,
   `sleeper` varchar(100) NOT NULL,
   `specific_day` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -122,7 +199,7 @@ CREATE TABLE `train` (
 -- Dumping data for table `train`
 --
 
-INSERT INTO `train` (`id`, `train_name`, `train_no`, `source`, `destination`, `2A`, `3A`, `sleeper`, `specific_day`) VALUES
+INSERT INTO `train` (`id`, `train_name`, `train_no`, `source`, `destination`, `two_A`, `three_A`, `sleeper`, `specific_day`) VALUES
 (2, 'Naihati Local', '7896', 'Sealdah JN', 'Naihati JN', '1021', '465', '23', 'M,T,W,T,F,S,S'),
 (3, ' MUMBAI/AHMEDABAD AC Duronto Exp', '12267', 'MUMBAI CENTRAL', 'AHMEDABAD ', '2555', '1555', '780', 'M,T,W,T,F,S,S'),
 (4, 'AHMEDABAD - MUMBAI CENT AC DURONTO EXP', '12268', 'AHMEDABAD ', 'MUMBAI CENT ', '2300', '1500', '700', 'M,T,W,T,F,S,S'),
@@ -163,6 +240,24 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer_booking`
+--
+ALTER TABLE `customer_booking`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order_invoice`
+--
+ALTER TABLE `order_invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `route`
 --
 ALTER TABLE `route`
@@ -195,6 +290,24 @@ ALTER TABLE `user_data`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `customer_booking`
+--
+ALTER TABLE `customer_booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `order_invoice`
+--
+ALTER TABLE `order_invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `route`

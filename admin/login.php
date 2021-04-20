@@ -117,12 +117,12 @@ header("location:login.php");
   </div>
 
   <footer>
-  	<p>
-  		Created with <i class="fa fa-heart"></i> by
-  		<a  href="#">Satya Sharma</a>
-  		- Read how I created this and how you can join the challenge
-  		<a  href="#">here</a>.
-  	</p>
+    <p>
+      Created  by
+      <a  href="#">Satya Sharma  ||  Sayan Garia  ||  Sayan Ghosal</a>
+      - Under The Guidance of <a href="#">Prof. Anay Ghosh</a>
+
+    </p>
   </footer>
   <script type="text/javascript">
   const signUpButton = document.getElementById('signUp');

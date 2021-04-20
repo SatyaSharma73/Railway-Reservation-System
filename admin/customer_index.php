@@ -92,7 +92,7 @@ function checkTime(i) {
                         </a>
 
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             <i class="fa fa-bar-chart-o fa-2x"></i>
                             <span class="nav-text">
@@ -108,7 +108,7 @@ function checkTime(i) {
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li> -->
                        <!-- <a href="#">
                            <i class="fa fa-table fa-2x"></i>
                             <span class="nav-text">
@@ -163,8 +163,23 @@ function checkTime(i) {
     <p>8. Get your favourite food at your train seat through e-Catering available at selected stations.</p>
   </div>
 </div>
+<br>
+<div class="container">
+    <hr>
+    <!-- Footer -->
+    <footer>
+
+        <div class="row">
+            <div class="col-lg-14 text-center">
+              <blockquote cite="">
+                 Satya Sharma_CSE3A_52  ||  Sayan Garai_CSE3A_53   ||  Sayan Ghosal_CSE3A_53 
+              </blockquote>
 
 
+            </div>
+        </div>
+    </footer>
+</div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 

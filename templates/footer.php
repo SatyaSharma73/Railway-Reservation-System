@@ -47,10 +47,10 @@
 
     <footer>
     	<p>
-    		Created with <i class="fa fa-heart"></i> by
-    		<a  href="#">Satya Sharma</a>
-    		- Read how I created this and how you can join the challenge
-    		<a  href="#">here</a>.
+    		Created  by
+    		<a  href="#">Satya Sharma_CSE3A_52  ||  Sayan Garai_CSE3A_53   ||  Sayan Ghosal_CSE3A_53 </a>
+    		- Under The Guidance of <a href="#">Prof. Anay Ghosh</a>
+
     	</p>
     </footer>
 

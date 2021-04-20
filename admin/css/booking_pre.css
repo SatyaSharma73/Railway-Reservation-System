@@ -3,6 +3,9 @@ body {
   margin: 0 auto;
   padding-left: 20%;
     padding-right: 20%;
+    padding-top: 5%;
+  padding-bottom: 5%;
+display: flex;
 }
 
 div.elem-group {
@@ -46,8 +49,9 @@ hr {
   border: 1px dotted #ccc;
 }
 
-button {
+.button {
   height: 50px;
+  width: 100px;
   background: orange;
   border: none;
   color: white;
@@ -55,9 +59,10 @@ button {
   font-family: 'Nanum Gothic';
   border-radius: 4px;
   cursor: pointer;
+  margin-left:45%;
 }
 
-button:hover {
+.button:hover {
   border: 2px solid black;
 }
 .main{

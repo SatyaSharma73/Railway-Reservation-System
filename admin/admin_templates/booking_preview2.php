@@ -1,22 +1,22 @@
 <?php
 include("../connection3.php");
 
-if (isset($_POST['Submit'])) {
-
-
-}
 
     if(isset($_POST['submit']))
     {
-        $number1 = $_POST['total_adults'];
-        $number2 = $_POST['total_children'];
-        $sum =  $number1+$number2;
-        echo "The sum of $number1 and $number2 is: ".$sum;
-        $query="insert into user_data set Name='".$_POST['name']."',Address='".$_POST['address']."',Email='".$_POST['email']."',Number='".$_POST['alternate_no']."',Age='".$_POST['age']."',Gender='".$_POST['sex']."' ,p_image='".$file."'";
+
+        $query="insert into customer_booking set name='".$_POST['name']."',email='".$_POST['email']."',phone='".$_POST['phone']."',adhaar='".$_POST['adhaar']."',adults='".$_POST['adults']."',children='".$_POST['children']."',arrival='".$_POST['arrival']."',Berth_preference='".$_POST['Berth_preference']."',train_no='".$_REQUEST['no']."',type='".$_POST['type']."'";
         mysqli_query($con,$query);
-        header("location:../admin_index.php");
+        header("location:rules.php");
       }
 
+$query="select * from customer_booking";
+$result=mysqli_query($con,$query);
+$fetch=mysqli_fetch_object($result);
+
+$query1="select * from train";
+$result1=mysqli_query($con,$query1);
+$fetch1=mysqli_fetch_object($result1);
  ?>
 
 <!doctype html>
@@ -27,6 +27,7 @@ if (isset($_POST['Submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="../css/booking_pre.css">
     <script src="https://use.fontawesome.com/0af9610dbb.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -37,52 +38,63 @@ if (isset($_POST['Submit'])) {
   <body>
 
 <div class="main">
-    <form action="reservation.php" method="post">
+    <form action="" method="post">
       <div class="elem-group">
         <label for="name">Your Name</label>
-        <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} value="<?php echo $_SESSION['NAME']; ?>"required>
+        <input type="text" id="name" name="name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} value="<?php echo $_SESSION['NAME']; ?>"required>
       </div>
       <div class="elem-group">
         <label for="email">Your E-mail</label>
-        <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" value="<?php echo $_SESSION['Email']; ?>" required>
+        <input type="email" id="email" name="email" placeholder="john.doe@email.com" value="<?php echo $_SESSION['Email']; ?>" required>
       </div>
       <div class="elem-group">
         <label for="phone">Your Phone</label>
-        <input type="tel" id="phone" name="visitor_phone" placeholder="+91 xxxxxxxxxx" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        <input type="tel" id="phone" name="phone" placeholder="+91 xxxxxxxxxx" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
       </div>
       <div class="elem-group">
         <label for="name">Adhaar No.</label>
-        <input type="text" id="name" name="visitor_name"  required>
+        <input type="text" id="name" name="adhaar"  required>
       </div>
       <hr>
       <div class="elem-group inlined">
         <label for="adult">Adults</label>
-        <input type="number" id="person" name="total_adults" placeholder="2" min="1" required>
+        <input type="number" id="person" name="adults" placeholder="2" min="1" required>
       </div>
       <div class="elem-group inlined">
         <label for="child">Children</label>
-        <input type="number" id="person" name="total_children" placeholder="2" min="0" required>
+        <input type="number" id="person" name="children" placeholder="2" min="0" required>
       </div>
       <div class="elem-group inlined">
         <label for="checkin-date">Arrival Date</label>
-        <input type="date" id="checkin-date" name="checkin" required>
+        <input type="date" id="checkin-date" name="arrival" required>
       </div>
-      <div class="elem-group inlined">
-        <label for="checkout-date">Departure Date</label>
-        <input type="date" id="checkout-date" name="checkout" required>
+
+      <div class="elem-group">
+
+        <select id="room-selection" name="Berth_preference" required>
+            <option >Select Berth Preference</option>
+            <option value="Lower">Lower</option>
+            <option value="Middle">Middle</option>
+            <option value="Upper">Upper</option>
+        </select>
       </div>
       <div class="elem-group">
-        <label for="room-selection">Select Berth Preference</label>
-        <select id="room-selection" name="room_preference" required>
-            <option value="">Choose from the List</option>
-            <option value="connecting">Lower</option>
-            <option value="adjoining">Middle</option>
-            <option value="adjacent">Upper</option>
+
+        <select id="room-selection" name="type" required>
+            <option >Select Fares</option>
+            <option value="<?php echo $fetch1->two_A;?>"><?php echo $fetch1->two_A;?> (2A)</option>
+            <option value="<?php echo $fetch1->three_A;?>"><?php echo $fetch1->three_A;?> (3A)</option>
+            <option value="<?php echo $fetch1->sleeper;?>"><?php echo $fetch1->sleeper;?> (Sl)</option>
         </select>
       </div>
       <hr>
 
-      <button type="submit">Book Now</button>
+      <input type="submit" name="submit" value="Submit" class="button" >
+
+
+
+
+
     </form>
 
 

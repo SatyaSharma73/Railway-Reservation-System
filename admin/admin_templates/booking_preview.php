@@ -31,12 +31,16 @@ $fetch=mysqli_fetch_object($result);
 <style media="screen">
 body{
   text-align: center;
+  padding: 10%;
 }
   .main{
     text-align: center;
     padding-bottom: 100px;
   }
-
+button{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 </style>
 
   <body>
@@ -44,6 +48,7 @@ body{
 <div class="main">
 
 <h1 class="Confirmation">Confirm the Train you want to Book</h1>
+<a href="booking_preview2.php?no=<?php echo $fetch->train_no;?>"><button type="button" class="btn btn-success">Confirm</button></a>
 
 <table>
 
@@ -81,10 +86,12 @@ body{
 
 
     </tr>
+
   </tbody>
+
 </table>
 </div>
-<a href="booking_preview2.php"><button type="button" class="btn btn-success">Confirm</button></a>
+
 
 
 

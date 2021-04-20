@@ -35,12 +35,7 @@ $result1=mysqli_query($con,$query1);
         <li>
           <a href="customer_Time_tables.php" class="link">Time Chart</a>
         </li>
-        <li>
-          <a href="" class="link">Add Station</a>
-        </li>
-        <li>
-          <a href="" class="link">Set Train Timing</a>
-        </li>
+        
 
       </ul>
 
